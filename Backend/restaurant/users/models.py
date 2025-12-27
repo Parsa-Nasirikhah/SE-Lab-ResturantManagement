@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 import uuid
 
-# --- UserManager ---
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None, role='customer'):
         if not email:
@@ -135,7 +134,7 @@ class Customer(models.Model):
         null=True,
         blank=True,
         related_name='current_customers',
-        help_text='میزی که مشتری در حال حاضر نشسته'
+        help_text='میزی که مشتری در حال  حاضر نشسته'
     )
     
     total_orders = models.IntegerField(default=0)
